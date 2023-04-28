@@ -1,0 +1,98 @@
+* {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.h-1rem {
+    height: 1rem;
+}
+.h-2rem {
+    height: 2rem;
+}
+.h-3rem {
+    height: 3rem;
+}
+.h-4rem {
+    height: 4rem;
+}
+.h-5rem {
+    height: 5rem;
+}
+
+.mt-4rem {
+    margin-top: 4rem;
+}
+
+.leading-4rem {
+    line-height: 4rem;
+}
+
+.sidebar {
+    max-width: 100%;
+    min-height: 100vh;
+}
+
+.side-navigation-bar {
+    min-height: 100vh !important;
+}
+
+.main-content {
+    height: calc(100vh - 64px)!important;
+}
+
+.loader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 5;
+    animation: hide 1s 3s forwards;
+}
+
+.loader {
+    position: absolute;
+    top: calc(50vh - 25px);
+    left: calc(50vw - 25px);
+    border: 10px solid #f3f3f3;
+    border-top: 10px solid #3498db;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite, hide 2s 2s forwards;
+    z-index: 10;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 1); /* semi-transparent black */
+    z-index: 1;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* hide the overlay after 3 seconds */
+.overlay {
+    animation: hide 2s forwards;
+    animation-delay: 3s;
+}
+
+@keyframes hide {
+    0% { opacity: 1;}
+    100% { opacity: 0;
+        z-index: 0}
+}
+
+
+@media screen and (min-width: 992px) {
+    .sidebar {
+        max-width: 240px!important;
+    }
+}
+
